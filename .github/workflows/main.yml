@@ -1,6 +1,8 @@
 name: Update repo
 
-on: push
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   generate:
@@ -8,6 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'  
+        cache: 'pip' # caching pip dependencies
+    - run: pip install -r requirements.txt
     - name: Run generate.py
       run: python generate.py
       shell: sh
+    - name: setup git config
+      run: |
+        git config user.name "GradienceBot"
+        git config user.email "AdwCustomizerTeam@proton.me"
+    - name: commit
+      run: |
+        git add .
+        git commit -m "ci: generate repo"
+        git push origin main
