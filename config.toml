@@ -5,7 +5,7 @@ url = "https://usegradience.github.io"
 repo = "https://github.com/gradiencepresets/official"
 support = "https://github.com/gradiencepresets/official/issue" # or matrix ?
 
-base_url = "https://raw.githubusercontent.com/gradiencepresets/{name}/main/{name}.toml"
+base_url = "https://raw.githubusercontent.com/gradiencepresets/official.{name}/main/{name}.toml"
 
 presets = [ "adwaita"]
 
