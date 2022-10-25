@@ -10,7 +10,7 @@ repo = "https://github.com/gradiencepresets/official"
 maintainer = "GradienceTeam"
 
 [presets.adwaita]
-raw = "https://raw.githubusercontent.com/gradiencepresets/adwaita/main/adwaita.toml"
+raw = "https://raw.githubusercontent.com/gradiencepresets/official.adwaita/main/adwaita.toml"
 name = "Adwaita"
 badges = [
     "official",
