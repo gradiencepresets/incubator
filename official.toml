@@ -1,0 +1,10 @@
+name="official"
+maintainer="GradienceTeam"
+url="https://usegradience.github.io"
+repo="https://github.com/gradiencepresets/official"
+support="https://github.com/gradiencepresets/official/issue" # or matrix ?
+
+[preset.adwaita]
+raw="https://github.com/gradiencepresets/adwaita/raw/main/adwaita.toml"
+badges=["official", "popular"]
+description="Adwaita is the Design System for GNOME"
