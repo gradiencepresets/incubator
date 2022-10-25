@@ -35,8 +35,10 @@ for preset in presets_list:
         online_preset = tomllib.loads(r.text)
         preset = {
             "raw": raw_url,
+            "name": online_preset["name"],
             "badges": online_preset["badges"],
-            "description": online_preset["description"]
+            "description": online_preset["description"],
+            "maintainer": online_preset["maintainer"]
         }
 
         presets[name] = preset
@@ -56,4 +58,27 @@ with open("official.toml", "w", encoding="utf-8") as f:
 
     f.write(gen)
 
+    print("Done!")
+    
+    
+BASE_README = """# Official repo
+
+This is the official repo for [Gradience](https://github.com/GradienceTeam/Gradience).
+
+Preset     | Maintainer
+-----------|---------------------------------------------------
+{presets}
+
+## New preset process
+
+Presets can be moved from the `curated` status to the [`official`](/official) status. That's the process:
+
+1. The preset should already be in this org. If not, refer to the [new](https://github.com/gradience-presets/new) repo.
+2. Open an issue and select the `New preset` template.
+3. After opening the preset, the preset will be in review. For being accepted, the preset must be voted by at least 50% of the team.
+"""
+
+with open("README.md", "w", encoding="utf-8") as f:
+    print("Updating README.md ...")
+    f.write(BASE_README.format(presets="\n".join(f"{preset['name']} | {preset['maintainer']}" for preset in presets.values())))
     print("Done!")

@@ -11,8 +11,10 @@ maintainer = "GradienceTeam"
 
 [presets.adwaita]
 raw = "https://raw.githubusercontent.com/gradiencepresets/adwaita/main/adwaita.toml"
+name = "Adwaita"
 badges = [
     "official",
     "popular",
 ]
 description = "Adwaita is the Design System for GNOME"
+maintainer = "GradienceTeam"
